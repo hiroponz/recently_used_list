@@ -6,11 +6,7 @@ type RecentlyUsedList struct {
 }
 
 func (r *RecentlyUsedList) IsEmpty() bool {
-	if r.count == 0 {
-		return true
-	} else {
-		return false
-	}
+	return r.count == 0
 }
 
 func (r *RecentlyUsedList) Push(str string) {
@@ -29,12 +25,10 @@ func (r *RecentlyUsedList) Count() int {
 }
 
 func (r *RecentlyUsedList) Index(str string) int {
-	i := 0
-	for i < r.count {
+	for i := 0; i < r.count; i++ {
 		if r.Fetch(i) == str {
 			return i
 		}
-		i++
 	}
 	return -1
 }
