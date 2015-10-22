@@ -25,3 +25,14 @@ func (r *RecentlyUsedList) Fetch(index int) string {
 func (r *RecentlyUsedList) Count() int {
 	return r.count
 }
+
+func (r *RecentlyUsedList) Index(str string) int {
+	i := 0
+	for i < r.count {
+		if r.Fetch(i) == str {
+			return i
+		}
+		i++
+	}
+	return -1
+}
