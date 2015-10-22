@@ -17,3 +17,7 @@ func (r *RecentlyUsedList) Push(str string) {
 	list[count] = str
 	count++
 }
+
+func (r *RecentlyUsedList) Fetch(index int) string {
+	return list[index]
+}

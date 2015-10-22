@@ -27,6 +27,9 @@ var _ = Describe("Sample", func() {
 			It("IsEmptyがfalseを返す", func() {
 				Expect(sut.IsEmpty()).To(BeFalse())
 			})
+			It("Fetchが追加した文字列を返す", func() {
+				Expect(sut.Fetch(0)).To(Equal("a"))
+			})
 		})
 	})
 })
