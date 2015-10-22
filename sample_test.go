@@ -10,8 +10,9 @@ import (
 var _ = Describe("Sample", func() {
 	Describe("#RecentlyUsedList", func() {
 		Context("リストが空の時", func() {
+			var sut *RecentlyUsedList
 			BeforeEach(func() {
-				sut := &RecentlyUsedList{}
+				sut = &RecentlyUsedList{}
 			})
 			It("IsEmptyがtrueを返す", func() {
 				Expect(sut.IsEmpty()).To(BeTrue())
