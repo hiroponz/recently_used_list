@@ -27,8 +27,25 @@ var _ = Describe("Sample", func() {
 			It("IsEmptyがfalseを返す", func() {
 				Expect(sut.IsEmpty()).To(BeFalse())
 			})
-			It("Fetchが追加した文字列を返す", func() {
+			It("Fetch(0)が追加した文字列を返す", func() {
 				Expect(sut.Fetch(0)).To(Equal("a"))
+			})
+		})
+		Context("文字列を２つ追加する", func() {
+			var sut *RecentlyUsedList
+			BeforeEach(func() {
+				sut = &RecentlyUsedList{}
+				sut.Push("a")
+				sut.Push("b")
+			})
+			It("IsEmptyがfalseを返す", func() {
+				Expect(sut.IsEmpty()).To(BeFalse())
+			})
+			It("Fetch(0)が2番目に追加した文字列を返す", func() {
+				Expect(sut.Fetch(0)).To(Equal("b"))
+			})
+			It("Fetch(1)が1番目に追加した文字列を返す", func() {
+				Expect(sut.Fetch(1)).To(Equal("a"))
 			})
 		})
 	})

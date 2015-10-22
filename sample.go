@@ -19,5 +19,5 @@ func (r *RecentlyUsedList) Push(str string) {
 }
 
 func (r *RecentlyUsedList) Fetch(index int) string {
-	return list[index]
+	return list[count-1-index]
 }
