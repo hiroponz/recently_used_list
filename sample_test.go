@@ -21,7 +21,7 @@ var _ = Describe("Sample", func() {
 				Expect(sut.Count()).To(Equal(0))
 			})
 		})
-		Context("文字列を一つ追加する", func() {
+		Context("文字列を'a'を追加する", func() {
 			var sut *RecentlyUsedList
 			BeforeEach(func() {
 				sut = &RecentlyUsedList{}
@@ -37,7 +37,7 @@ var _ = Describe("Sample", func() {
 				Expect(sut.Fetch(0)).To(Equal("a"))
 			})
 		})
-		Context("文字列を２つ追加する", func() {
+		Context("文字列'a'->'b'を追加する", func() {
 			var sut *RecentlyUsedList
 			BeforeEach(func() {
 				sut = &RecentlyUsedList{}
