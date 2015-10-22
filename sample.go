@@ -1,5 +1,7 @@
 package go_ginkgo
 
-func Say() string {
-	return "Hello TDD BootCamp!!"
+type RecentlyUsedList struct{}
+
+func (r *RecentlyUsedList) IsEmpty() bool {
+	return true
 }

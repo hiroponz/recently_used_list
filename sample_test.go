@@ -8,9 +8,14 @@ import (
 )
 
 var _ = Describe("Sample", func() {
-	Describe("#say", func() {
-		It("Hello TDD BootCampを返すこと", func() {
-			Expect(Say()).To(Equal("Hello TDD BootCamp!!"))
+	Describe("#RecentlyUsedList", func() {
+		Context("リストが空の時", func() {
+			BeforeEach(func() {
+				sut := &RecentlyUsedList{}
+			})
+			It("IsEmptyがtrueを返す", func() {
+				Expect(sut.IsEmpty()).To(BeTrue())
+			})
 		})
 	})
 })
