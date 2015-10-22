@@ -75,5 +75,28 @@ var _ = Describe("Sample", func() {
 				Expect(sut.Index("c")).To(Equal(-1))
 			})
 		})
+		Context("文字列'a'->'a'を追加する", func() {
+			var sut *RecentlyUsedList
+			BeforeEach(func() {
+				sut = &RecentlyUsedList{}
+				sut.Push("a")
+				sut.Push("a")
+			})
+			It("IsEmptyがfalseを返す", func() {
+				Expect(sut.IsEmpty()).To(BeFalse())
+			})
+			It("Countが1を返す", func() {
+				Expect(sut.Count()).To(Equal(1))
+			})
+			It("Fetch(0)が2番目に追加した文字列を返す", func() {
+				Expect(sut.Fetch(0)).To(Equal("a"))
+			})
+			It("Index('a')が0を返す", func() {
+				Expect(sut.Index("a")).To(Equal(0))
+			})
+			It("Index('b')が-1を返す", func() {
+				Expect(sut.Index("b")).To(Equal(-1))
+			})
+		})
 	})
 })

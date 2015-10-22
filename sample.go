@@ -14,8 +14,10 @@ func (r *RecentlyUsedList) IsEmpty() bool {
 }
 
 func (r *RecentlyUsedList) Push(str string) {
-	r.list[r.count] = str
-	r.count++
+	if r.Index(str) == -1 {
+		r.list[r.count] = str
+		r.count++
+	}
 }
 
 func (r *RecentlyUsedList) Fetch(index int) string {
