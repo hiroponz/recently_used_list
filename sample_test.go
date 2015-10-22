@@ -18,5 +18,15 @@ var _ = Describe("Sample", func() {
 				Expect(sut.IsEmpty()).To(BeTrue())
 			})
 		})
+		Context("文字列を一つ追加する", func() {
+			var sut *RecentlyUsedList
+			BeforeEach(func() {
+				sut = &RecentlyUsedList{}
+				sut.Push("a")
+			})
+			It("IsEmptyがfalseを返す", func() {
+				Expect(sut.IsEmpty()).To(BeFalse())
+			})
+		})
 	})
 })
